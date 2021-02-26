@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360商城</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <link rel="stylesheet" href="./less/index.css">
+    <script src="./js/index.js"></script>
+</head>
+<!-- 头部 -->
+
+<body id="index">
+    <div class="head_nav">
+        <div class="head_box">
+            <div class="left">
+                <!-- <span>帮助中心</span>
+            <span>收藏</span>
+            <span>360官网</span>
+            <span>360智慧生活</span> -->
+            </div>
+            <div class="right">
+            </div>
+        </div>
+
+    </div>
+    <!--nav -->
+    <div class="logo">
+        <div class="logo_left">
+            <!-- <div>111</div>
+            <div>111</div>
+            <div>111</div>
+            <div>111</div> -->
+        </div>
+        <div class="logo_right">
+            <input type="text" class="showImg">
+            <img src="./image/seach.png" alt="" onclick="search()">
+            <div class="logo_ul">
+                <ul onclick="ullist()"></ul>
+
+            </div>
+
+            <div class="span_list">
+                <!-- <span>111</span>
+                <span>111</span>
+                <span>111</span><span>111</span><span>111</span><span>111</span><span>111</span> -->
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="showBox">
+        <img src="https://p4.ssl.qhimg.com/t01912e4fcc88786eca.png" alt="">
+        <div>
+            <p>手机360商城</p>
+            <p>扫码下载</p>
+        </div>
+    </div>
+    <div class="imgText">
+        您的购物车还没有商品，快去选品
+    </div>
+
+
+    <!-- 轮播图 -->
+    <div class="layui-carousel" id="test1">
+        <div carousel-item class="carousel">
+        </div>
+    </div>
+    <!-- 最外层 -->
+    <div class="padding"> </div>
+    <!-- 限时购 -->
+    <div class="padding1">
+        <div class="countdown">
+            <div class="end">
+                <img src="./image/time.png" alt="" class="end_img">
+                <span class="seven">19:00场</span>
+                <span>距结束</span>
+            </div>
+            <div class="time">
+                <img src="https://p2.ssl.qhimg.com/t01b69ea3ed29108350.webp" alt="" class="timeBig">
+                <div class="time_box">
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 爆款推荐 -->
+        <div class="recommend">
+
+        </div>
+
+
+        <!-- 家庭安防 -->
+        <div class="family">
+            <div class="Security">
+                <h2>家庭安防</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+            <div class="family_box">
+
+            </div>
+
+        </div>
+
+
+        <!-- 安全路由器 -->
+        <div class="family">
+            <div class="Security">
+                <h2>安全路由器</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+            <div class="Router_box">
+
+            </div>
+        </div>
+
+        <!-- 行车安全 -->
+        <div class="family">
+            <div class="Security">
+                <h2>行车安全</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+
+            <div class="Driving_box"></div>
+        </div>
+        <!-- 扫地机器人 -->
+        <div class="family">
+            <div class="Security">
+                <h2>扫地机器人</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+
+            <div class="Sweep_box">
+
+            </div>
+        </div>
+        <!-- 智能守护 -->
+        <div class="family">
+            <div class="Security">
+                <h2>智能守护</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+
+            <div class="intel_box">
+
+            </div>
+        </div>
+
+        <!-- 生态互联 -->
+        <div class="family">
+            <div class="Security">
+                <h2>生态互联</h2>
+                <span>全部 &gt; &gt;</span>
+            </div>
+
+            <div class="ecology_box">
+
+            </div>
+        </div>
+
+        <!-- 更多商品 -->
+        <div class="family">
+            <div class="Security">
+                <h2>更多商品</h2>
+            </div>
+            <div class="content">
+                <div class="content_box">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="last_text">
+            <i></i>
+            <span> 我已经陪你到底了</span>
+            <i></i>
+        </div>
+        <button class="btn" onclick="btn1()">回到顶部</button>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+
+        <div class="footer_box">
+            <div class="Shopping">
+                <h3>关于商城</h3>
+                <p>
+                    360商城是奇虎360公司的官方电商平台，主要经营360安全智能设备，以及相关领域消费品。提供最新的360智能设备，最贴心的售后服务，360社区一手评测资讯，享受360安全、安心、放心的购物体验。
+                </p>
+                <div class="about">
+                    <span class="urse">关于我们</span>
+                    <span class="WeChat">
+                        <img src="./image/微信.png" alt="">
+                        <img src="./image/wx.png" alt="" class="wx">
+                    </span>
+
+                    <span class="micro" onclick="blog()">
+                        <img src="./image/微博.png" alt="">
+                        <img src="./image/wb.png" alt="" class="wb">
+                    </span>
+
+                </div>
+            </div>
+            <div class="After">
+
+            </div>
+            <div class="help">
+
+            </div>
+            <div class="download">
+                <h3>扫码下载APP</h3>
+                <img src="https://p4.ssl.qhimg.com/t01912e4fcc88786eca.png" alt="">
+            </div>
+            <div class="contact">
+                <h3>联系我们</h3>
+                <h2>400-1555-360</h2>
+                <span>周一至周五 9:00-21:00(仅收市话费)</span>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="floor">
+        <div class="floor_top">
+            <div>
+                <img src="./image/退回.png" alt="">
+                <h3>7天无理由退货</h3>
+            </div>
+            <div>
+                <img src="./image/互换.png" alt="">
+                <h3>15天免费换货</h3>
+            </div>
+            <div>
+                <img src="./image/箱子.png" alt="">
+                <h3>满99元包邮</h3>
+            </div>
+
+        </div>
+        <div class="floor_bottom">
+            <p> ©2019-2021 mall.360.cn版权所有 </p>
+            <p>京ICP备08010314号-43 营业执照 京公网安备11000002000006号 </p>
+            <p class="company">公司名称：北京视觉世界科技有限公司 | 社会统一信用代码：91110105336460203N | 食品经营许可证</p>
+            <p class="company"> 公司地址：北京市朝阳区酒仙桥路6号院2号楼1至17层102号内5层501 | 联系方式：400-1555-360</p>
+        </div>
+
+    </div>
+
+    <!-- 登录  -->
+    <div class="login">
+        <div class="box">
+            <div class="log">
+                <div class="wrap">
+                    <div class="head">
+                        <div class="head_left">
+                            <a href="#" onclick="userCode(1)">短信登录</a>
+                        </div>
+                        <span class="line">|</span>
+                        <div class="head_center">
+                            <a href="#" onclick="userCode(2)">360账号登录</a>
+                        </div>
+                        <div class="head_right ">
+                            <em onclick="del()">X</em>
+                        </div>
+                    </div>
+                    <div class="footer ">
+                        <div class="tel ">
+                            <input type="text" placeholder="手机号 ">
+                        </div>
+                        <div class="pass">
+                            <input type="text" placeholder="短信验证码" class="short"><input type="text" class="get" style="cursor: pointer;" value="获取验证码" onclick="f1()">
+                        </div>
+                        <div class="subm">
+                            <input type="submit" value="登录 " onclick="login_phone()" disabled>
+                        </div>
+                        <div class="text ">
+                            <span onclick="fast()" style="cursor: pointer;">快速注册</span>
+                            <span style="cursor: pointer;">找回密码</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 注册 -->
+    <div class="register">
+        <div class="register_box">
+            <div class="register_hide">
+                <span>手机号注册</span>
+                <em onclick="dele()">X</em>
+            </div>
+            <div class="register_content">
+                <div class="content_tel">
+                    <input type="text" placeholder="手机号">
+                </div>
+                <div class="content_ver">
+                    <input type="text" placeholder="验证码">
+                    <img src="" alt="" class="code">
+                    <span onclick="change()" style="cursor: pointer;">换一张</span>
+                </div>
+                <div class="content_get">
+                    <input type="text" placeholder="短信验证码" class="short" style="padding-left: 40px;"><input type="text" placeholder="获取验证码" class="get" style="cursor: pointer;">
+                </div>
+                <div class="content_pass">
+                    <input type="text" placeholder="密码（8-20个字符）">
+                </div>
+                <div class="content_check">
+                    <input type="checkbox">
+                    <span>阅读并同意 <a href="https://i.360.cn/reg/protocol">《360用户服务条款》</a>和<a href="https://i.360.cn/reg/privacy">《360用户隐私政策》</a> </span>
+                </div>
+                <div class="content_sub">
+                    <input type="submit" value="注册">
+                </div>
+                <div class="content_text">
+                    <span>已有账号, <i onclick="href()" style="cursor: pointer;">直接登录</i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边 -->
+    <div class="flexd layui-anim layui-anim-up">
+        <div class="flexd_list">
+            <p class="list_ones">四个字啊</p>
+            <p class="list_ones">四个字啊</p>
+            <p class="list_ones">四个字啊</p>
+            <p class="list_ones">四个字啊</p>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/my_index.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/publicData.js"></script>
+    <script src="./js/public.js"></script>
+
+
+
+</body>
+<script>
+    // 回到顶部
+    function btn1() {
+        console.log(1);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+    // 回到顶部按钮显示和隐藏
+    $(window).scroll((e) => {
+        var top = $(document).scrollTop();
+        if (top > 1000) {
+            $('.btn').show();
+            $('.btn').addClass('layui-anim layui-anim-up').removeClass('layui-anim-fadeout').show()
+        } else {
+            $('.btn').removeClass('layui-anim layui-anim-up').addClass('layui-anim-fadeout').hide()
+        }
+    });
+
+    let arr = ['更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐', ];
+    let list_str = '';
+    arr.forEach((item, index) => {
+        list_str += `<p onclick="list_click_open_page(${index})" onmouseover="list_over(${index})" onmouseout="list_seout(${index})" class="layui-anim list_ones">${item}</p>`
+    })
+    $('.flexd_list').html(list_str);
+    const p_list = $('.list_ones');
+
+    function list_over(index) {
+        $(p_list[index]).addClass('list_add_color')
+    }
+
+    function list_seout(index) {
+        $(p_list[index]).removeClass('list_add_color')
+    }
+
+    function list_click_open_page(index) {
+        location.href = 'listPage.html?id=12' + index
+    }
+    $(window).scroll((e) => {
+        var top = $(document).scrollTop();
+        console.log(top);
+        if (top > 100)
+            if (top > 700) {
+                console.log('大于700了');
+                $('.flexd').show();
+                $('.flexd').addClass('layui-anim layui-anim-up').removeClass('layui-anim-fadeout').show()
+            } else {
+                $('.flexd').removeClass('layui-anim layui-anim-up').addClass('layui-anim-fadeout').hide()
+
+                console.log('效益700');
+            }
+    });
+</script>
+
+</html>

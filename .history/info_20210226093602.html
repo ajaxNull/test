@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./less/info.css">
+    <script src="./js/publicData.js"></script>
+    <script src="./js/my_index.js"></script>
+
+    <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="Outer">
+        <div id="index">
+            <div class="head_nav">
+                <div class="head_box">
+                    <div class="left">
+                        <!-- <span>帮助中心</span>
+                    <span>收藏</span>
+                    <span>360官网</span>
+                    <span>360智慧生活</span> -->
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+
+            </div>
+            <div class="logo">
+                <div class="logo_left">
+                    <!-- <div>111</div>
+                    <div>111</div>
+                    <div>111</div>
+                    <div>111</div> -->
+                </div>
+                <div class="logo_right">
+                    <input type="text" class="showImg">
+                    <img src="./image/seach.png" alt="" onclick="seach()">
+                    <div class="span_list">
+                        <!-- <span>111</span>
+                        <span>111</span>
+                        <span>111</span><span>111</span><span>111</span><span>111</span><span>111</span> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="showBox">
+                <img src="https://p4.ssl.qhimg.com/t01912e4fcc88786eca.png" alt="">
+                <div>
+                    <p>手机360商城</p>
+                    <p>扫码下载</p>
+                </div>
+            </div>
+            <div class="imgText">
+                您的购物车还没有商品，快去选品
+            </div>
+        </div>
+        <div class="info_line"></div>
+        <div class="info_shop">
+            <div class="info_img">
+                <img src="https://p2.ssl.qhimg.com/t010e9e338c925fdb48.webp" alt="">
+            </div>
+            <div class="info_text"></div>
+        </div>
+        <h2>商品详情</h2>
+        <div class="details"></div>
+        <script src="https://www.layuicdn.com/layui/layui.js"></script>
+        <script src="./js/my_index.js"></script>
+        <script src="./js/ajax.js"></script>
+        <script src="./js/public.js"></script>
+        <script>
+            function getUrlParam(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+
+                var r = window.location.search.substr(1).match(reg); //匹配目标参数
+
+                if (r != null) return unescape(r[2]);
+
+                return null; //返回参数值
+
+            }
+
+            const url = 'https://www.jshntg.com/api/product/detail/' + getUrlParam('id');
+            var str = '';
+            var info_arr = [];
+            let shopObj = {};
+            $.ajax({
+                url: url,
+                async: false,
+                success: (res) => {
+                    console.log(res);
+                    shopObj = res.data.storeInfo;
+                    $('.info_img img').attr('src', res.data.storeInfo.image);
+                    $('.details').html(res.data.storeInfo.description)
+                    str = `
+                    <div class="info_em">
+                <h1 class="info_name">${res.data.storeInfo.store_name}</h1>
+                <p class="info_head">${res.data.storeInfo.keyword}</p>
+                <a href="" class="info_a">${res.data.storeInfo.store_info}，点击查看>></a>
+            </div>
+            <div class="info_box">                                            
+                <div class="info_border"></div>
+                <div class="product">
+                    <p class="info_p1">
+                        <i>价格</i>
+                        <span>${res.data.storeInfo.price}</span>
+                        <del>${res.data.storeInfo.ot_price}</del>
+                    </p>
+                    <p class="info_p2">
+                        <i>领券</i>
+                        <span>满99.00减5.00</span>
+                    </p>
+                    <div class="info_p3">
+                        <div>促销</div>
+                        <p>
+                            <span>
+                            <em>赠品</em>
+                            <a href="">送360 安全网线EC1 x1</a>
+                        </span><br>
+                            <span>
+                                <em>直降</em>
+                                <span>立减${res.data.storeInfo.ot_price - res.data.storeInfo.price}元</span>
+                            </span><br>
+                            <span>
+                                <em>满赠</em>
+                                <span>满199送湿巾</span>
+                            </span>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="ficat">
+                    <p>分类</p>
+                    <div class="category">
+                        <span>V5S 增强版</span>
+                        <span>V5S</span>
+                        <span>V5P</span>
+                        <span>V5</span>
+                    </div>
+                </div>
+                <div class="info_num">
+                    <span>数量</span>
+                    <button class="btn1" onclick="reduce()">-</button><input type="text"  class="ipt"><button class="btn2" onclick="add()">+</button>
+                </div>
+            </div>
+            <div class="info_footer">
+                <div class="diately">立即购买</div>
+                <div class="car"  onclick="join()">加入购物车</div>
+                <div class="Collection">收藏</div>
+            </div>`
+
+                    $('.info_text').html(str);
+                    for (key in res.data.productValue) {
+                        info_arr.push(res.data.productValue[key]);
+                    }
+                }
+            });
+            console.log(info_arr);
+            let category = $('.category');
+            let info_str = '';
+            info_arr.forEach((item, index) => {
+
+                info_str += ` <span onclick="slectType(${index})">${item.suk}</span>`
+            });
+            category.html(info_str);
+
+            function slectType(e) {
+                $('.info_img img').attr('src', info_arr[e].image);
+                $($('.category span')[e]).addClass('active').siblings().removeClass('active');
+            }
+
+            function reduce() {
+                // console.log($('.ipt').val());
+                if ($('.ipt').val() >= 2) {
+                    $('.ipt').val($('.ipt').val() - 1);
+                } else {
+                    return
+                }
+            };
+            // 数量添加
+            function add() {
+                $('.ipt').val($('.ipt').val() * 1 + 1)
+            }
+
+            // 加入购物车  
+            function join() {
+                layui.use('layer', function() {
+                    var layer = layui.layer;
+                    if ($('.ipt').val() < 1) {
+                        return layer.msg('您还没有选择商品哦');
+                    }
+                    console.log(shopObj);
+                    shopObj.shopNum = $('.ipt').val();
+
+
+                    // 判断是否登录,如果没有登录跳转到登录页面
+                    let arr = sessionStorage.getItem('name') ? JSON.parse(sessionStorage.getItem('name')) : [];
+                    arr.push(shopObj);
+                    sessionStorage.setItem('name', JSON.stringify(arr));
+                    window.location = './car.html';
+                });
+
+            }
+            // 请求商品 拿到id渲染
+            $.ajax({
+                url: http: '//mall.360.cn/shop/item?item_id=5e7460c7b0c3a939fbd67932',
+            })
+        </script>
+
+
+</body>
+
+
+</html>

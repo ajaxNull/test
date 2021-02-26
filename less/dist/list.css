@@ -1,0 +1,40 @@
+.box .box_list {
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+}
+.box ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.box ul li {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+}
+.box ul li img {
+  width: 300px;
+  height: 300px;
+}
+.box ul li .store_name {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.box ul li .price {
+  color: #f33;
+  font-size: 16px;
+  font-weight: 600;
+}
+.box ul li .ot_price {
+  color: #999;
+  margin-left: 5px;
+}
+.box .btn {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  display: none;
+}

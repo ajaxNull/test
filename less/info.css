@@ -1,0 +1,200 @@
+.info_line {
+  width: 100%;
+  height: 1px;
+  background: #333;
+}
+.info_shop {
+  width: 100%;
+  display: flex;
+  padding-top: 40px;
+}
+.info_shop .info_img {
+  width: 30%;
+  text-align: center;
+  height: 30vw;
+}
+.info_shop .info_img img {
+  width: 400px;
+  height: 400px;
+}
+.info_shop .info_img .list_box {
+  width: 550px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.info_shop .info_img .list_box img {
+  width: 15%;
+  margin-right: 5px;
+}
+.info_shop .info_text {
+  width: 50%;
+  margin-left: 46%;
+}
+.info_shop .info_text .info_em .info_name {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0.5vw 0;
+}
+.info_shop .info_text .info_em .info_head {
+  font-size: 14px;
+  color: red;
+}
+.info_shop .info_text .info_em .info_a {
+  font-size: 14px;
+  color: #2661b2;
+}
+.info_shop .info_text .info_box .info_border {
+  height: 5px;
+  background: #f0f0f0;
+  margin-top: 10px;
+}
+.info_shop .info_text .info_box .product {
+  background: #fafafa;
+}
+.info_shop .info_text .info_box .product p {
+  font-size: 14px;
+  padding: 0 0 10px 15px;
+}
+.info_shop .info_text .info_box .product p i {
+  display: inline-block;
+  font-style: normal;
+  letter-spacing: 20px;
+}
+.info_shop .info_text .info_box .product .info_p1 span {
+  color: #fa5437;
+  font-size: 24px;
+  font-weight: 800;
+}
+.info_shop .info_text .info_box .product .info_p1 del {
+  font-size: 12px;
+  color: #333;
+}
+.info_shop .info_text .info_box .product .info_p2 span {
+  color: #ff3333;
+  font-size: 12px;
+  background: #ffebe9;
+  padding: 0 5px;
+  border: 1px solid #ff3333;
+  cursor: pointer;
+}
+.info_shop .info_text .info_box .product .info_p3 {
+  display: flex;
+  padding: 0 0 10px 15px;
+}
+.info_shop .info_text .info_box .product .info_p3 div {
+  font-size: 14px;
+  letter-spacing: 20px;
+}
+.info_shop .info_text .info_box .product .info_p3 p {
+  padding: 0;
+}
+.info_shop .info_text .info_box .product .info_p3 em {
+  font-style: normal;
+  width: 40px;
+  color: #ff3333;
+  background: #ffebe9;
+  padding: 0 8px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+.info_shop .info_text .info_box .product .info_p3 span {
+  color: #666;
+  font-size: 14px;
+}
+.info_shop .info_text .info_box .product .info_p3 a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.info_shop .info_text .info_box .product .info_p3 a:hover {
+  border-bottom: 1px solid #666;
+  cursor: pointer;
+}
+.info_shop .info_text .info_box .ficat {
+  display: flex;
+  padding: 0 0 10px 15px;
+}
+.info_shop .info_text .info_box .ficat p {
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 20px;
+  width: 120px;
+}
+.info_shop .info_text .info_box .ficat .category span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding: 3px 20px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.info_shop .info_text .info_box .info_num {
+  padding: 0 0 10px 15px;
+}
+.info_shop .info_text .info_box .info_num span {
+  color: #999;
+  letter-spacing: 20px;
+}
+.info_shop .info_text .info_box .info_num button {
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+.info_shop .info_text .info_box .info_num input {
+  text-align: center;
+  width: 40px;
+  height: 28px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+.info_shop .info_text .info_footer {
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+}
+.info_shop .info_text .info_footer .diately {
+  width: 200px;
+  height: 38px;
+  line-height: 38px;
+  color: #ff3333;
+  border: 1px solid #ff3333;
+  border-radius: 5px;
+  background: #ffebe9;
+  font-size: 20px;
+  margin-right: 16px;
+}
+.info_shop .info_text .info_footer .car {
+  width: 200px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 16px;
+  border: 1px solid #ff3333;
+  background: linear-gradient(180deg, #F33 0, #F63 100%);
+}
+.info_shop .info_text .info_footer .Collection {
+  width: 80px;
+  height: 38px;
+  line-height: 38px;
+  background: #fafafa;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+  color: #ff3333;
+}
+.active {
+  background: #ffebe9;
+  border: 1px solid #f33 !important;
+}
+h2 {
+  margin: 50px 0;
+  text-align: center;
+  font-size: 30px;
+}
+.details {
+  width: 100%;
+  text-align: center;
+}

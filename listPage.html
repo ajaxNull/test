@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+    <link rel="stylesheet" href="./less/index.css">
+    <link rel="stylesheet" href="./less/list.css">
+    <title>列表页</title>
+    <script src="./js/publicData.js"></script>
+    <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="index">
+        <div class="head_nav">
+            <div class="head_box">
+                <div class="left">
+                    <!-- <span>帮助中心</span>
+                <span>收藏</span>
+                <span>360官网</span>
+                <span>360智慧生活</span> -->
+                </div>
+                <div class="right">
+                </div>
+            </div>
+
+        </div>
+        <div class="logo">
+            <div class="logo_left">
+                <!-- <div>111</div>
+                <div>111</div>
+                <div>111</div>
+                <div>111</div> -->
+            </div>
+            <div class="logo_right">
+                <input type="text" class="showImg">
+                <img src="./image/seach.png" alt="" onclick="seach()">
+                <div class="span_list">
+                    <!-- <span>111</span>
+                    <span>111</span>
+                    <span>111</span><span>111</span><span>111</span><span>111</span><span>111</span> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="showBox">
+            <img src="https://p4.ssl.qhimg.com/t01912e4fcc88786eca.png" alt="">
+            <div>
+                <p>手机360商城</p>
+                <p>扫码下载</p>
+            </div>
+        </div>
+        <div class="imgText">
+            您的购物车还没有商品，快去选品
+        </div>
+    </div>
+
+    <div class="box">
+        <p class="box_list">列表页</p>
+        <ul>
+
+        </ul>
+        <button class="btn" onclick="btn1()">回到顶部</button>
+
+
+    </div>
+    <!-- https://www.jshntg.com/api/products?sid=121&keyword=&priceOrder=&salesOrder=&news=0&page=2&limit=20&cid=0 -->
+    <div id="demo7" style="text-align: center;"></div>
+    <div>
+
+    </div>
+</body>
+
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script src="./js/my_index.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/public.js"></script>
+<script>
+    // 回到顶部
+    function btn1() {
+        console.log(1);
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+    // 回到顶部按钮显示和隐藏
+    $(window).scroll((e) => {
+        var top = $(document).scrollTop();
+        if (top > 700) {
+            $('.btn').show();
+
+            $('.btn').addClass('layui-anim layui-anim-up').removeClass('layui-anim-fadeout').show()
+        } else {
+            $('.btn').removeClass('layui-anim layui-anim-up').addClass('layui-anim-fadeout').hide()
+        }
+    });
+
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+
+        var r = window.location.search.substr(1).match(reg); //匹配目标参数
+
+        if (r != null) return unescape(r[2]);
+
+        return null; //返回参数值
+
+    }
+    var id = getUrlParam('id');
+    $.ajax({
+        url: 'https://www.jshntg.com/api/products?keyword=&priceOrder=&salesOrder=&news=0&page=1&limit=18&cid=0&sid=' + id,
+        success: function(r) {
+            let res = r.data;
+            let str = '';
+            res.forEach(item => {
+                str += `
+        <li>
+          <img src="${item.image}" alt="">
+          <p class="store_name">${item.store_name}</p>
+          <p>
+            <span class="price">价格：￥${item.price}</span>
+            <del class="ot_price">￥${item.ot_price}</del>
+          </p>
+        </li> 
+        `
+            });
+            $('.box ul').html(str);
+
+
+
+        }
+    })
+    layui.use(['laypage', 'layer'], function() {
+        var laypage = layui.laypage,
+            layer = layui.layer;
+        //完整功能
+        laypage.render({
+            elem: 'demo7',
+            count: 100,
+            layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip'],
+            jump: function(obj) {
+                $.ajax({
+                    url: 'https://www.jshntg.com/api/products?keyword=&priceOrder=&salesOrder=&news=0&limit=12&cid=0&page=' + obj.curr + '&sid=' + id,
+                    success: function(res) {
+
+                        let str = '';
+                        res.data.forEach(item => {
+                            str += `
+        <li onclick="listInfo(${item.id})">
+          <img src="${item.image}" alt="">
+          <p class="store_name">${item.store_name}</p>
+          <p>
+            <span class="price">价格：￥${item.price}</span>
+            <del class="ot_price">￥${item.ot_price}</del>
+          </p>
+        </li> 
+        `
+                        });
+                        $('.box ul').html(str);
+                    }
+                })
+                console.log(obj)
+            }
+        })
+    });
+
+    // 跳转到商品详情
+    function listInfo(e) {
+        // console.log(1);
+        window.location = './info.html?id=' + e;
+    }
+</script>
+
+</html>

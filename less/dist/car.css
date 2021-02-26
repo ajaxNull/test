@@ -1,0 +1,164 @@
+.car_box {
+  margin-top: 20px;
+  padding: 50px 200px;
+  background: #e8e8e8;
+}
+.car_box .car_head {
+  background: #fff;
+  padding: 20px 0;
+  font-weight: 800;
+  font-size: 14px;
+}
+.car_box .car_head table {
+  text-align: center;
+}
+.car_box .car_head table .form .all {
+  width: 60px;
+}
+.car_box .car_head table .form .all .check {
+  outline: none;
+}
+.car_box .car_head table .form .commodity {
+  width: 350px;
+}
+.car_box .car_head table .form .attribute {
+  width: 190px;
+}
+.car_box .car_head table .form .Unit {
+  width: 100px;
+}
+.car_box .car_head table .form .number {
+  width: 100px;
+}
+.car_box .car_head table .form .Subtotal {
+  width: 100px;
+}
+.car_box .car_head table .form .operation {
+  width: 100px;
+}
+.car_box .support {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #333;
+}
+.car_box .support span {
+  margin-left: 10px;
+  color: #f33;
+  border: 1px solid #f33;
+  background: #ffebe9;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+.car_box .car_aa {
+  border-top: 4px solid #ccc;
+}
+.car_box .shopping {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+}
+.car_box .shopping .inp {
+  width: 60px;
+}
+.car_box .shopping .car_line {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.car_box .shopping .car_line .car_shop {
+  display: flex;
+  align-items: center;
+  width: 350px;
+  height: 100px;
+}
+.car_box .shopping .car_line .car_shop img {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.car_box .shopping .car_line .car_shop p {
+  width: 230px;
+  margin-left: 5px;
+}
+.car_box .shopping .car_line .fication {
+  width: 190px;
+}
+.car_box .shopping .car_line .amount {
+  width: 102px;
+}
+.car_box .shopping .car_line .car_num button {
+  outline: none;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+.car_box .shopping .car_line .car_num .ipt {
+  outline: none;
+  border: 1px solid #ccc;
+  width: 35px;
+  height: 19px;
+  text-align: center;
+}
+.car_box .shopping .car_line .total span {
+  display: inline-block;
+  width: 100px;
+}
+.car_box .car_set {
+  display: flex;
+  background: #fff;
+  margin: 20px 0 40px 0 ;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  padding: 20px 0;
+}
+.car_box .car_set .car_all {
+  width: 60px;
+  font-weight: 800;
+  text-align: center;
+}
+.car_box .car_set .car_all input {
+  outline: none;
+}
+.car_box .car_set .Select {
+  margin-left: 20px;
+  width: 450px;
+}
+.car_box .car_set .car_sel {
+  font-size: 16px;
+}
+.car_box .car_set .car_sel .car_piece {
+  color: #f33;
+  font-size: 14px;
+}
+.car_box .car_set .car_sel .car_tol {
+  font-size: 14px;
+  font-weight: 800;
+  color: #f33;
+}
+.car_box .car_set .car_sel .Discount {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+}
+.car_box .car_set .go {
+  margin-left: 50px;
+}
+.car_box .car_set .go span {
+  display: inline-block;
+  width: 120px;
+  background: #aaa;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
