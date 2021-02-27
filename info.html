@@ -108,14 +108,14 @@
         <div class="info_line"></div>
         <div class="info_shop">
             <div class="info_img" id="box1">
-                <div id="img_box"  data-index="0">
-                    <img class="smallimg"  data-index="0"  src="https://p2.ssl.qhimg.com/t010e9e338c925fdb48.webp" alt="">
+                <div id="img_box" data-index="0">
+                    <img class="smallimg" data-index="0" src="https://p2.ssl.qhimg.com/t010e9e338c925fdb48.webp" alt="">
                     <div id="mark" data-index="0"></div>
                 </div>
-                
-               <div class="list_box">
 
-               </div>
+                <div class="list_box">
+
+                </div>
             </div>
             <div id="box2" class="info_img">
                 <img src="https://p2.ssl.qhimg.com/t010e9e338c925fdb48.webp" class="smallimg">
@@ -213,22 +213,22 @@
                         info_arr.push(res.data.productValue[key]);
                     }
                 }
-                
+
             });
 
             // 渲染生成小图   for_str+=`<img src="${item}" onclick="on_img(${item})">` ;
-            let for_str='';
-            shopObj.slider_image.forEach((item,index)=>{
-                for_str+=`<img data-index="${index+1}" src="${item}"onclick="on_img(${index})" />` ;
+            let for_str = '';
+            shopObj.slider_image.forEach((item, index) => {
+                for_str += `<img data-index="${index+1}" src="${item}"onclick="on_img(${index})" />`;
                 // console.log(item);
             });
-        $('.list_box').html(for_str);
-        // 小图的点击事件
-        function on_img(r){
-             let str= shopObj.slider_image[r];
-             $('.info_img  .smallimg').attr('src',str)
-                
-        }
+            $('.list_box').html(for_str);
+            // 小图的点击事件
+            function on_img(r) {
+                let str = shopObj.slider_image[r];
+                $('.info_img  .smallimg').attr('src', str)
+
+            }
 
 
             console.log(info_arr);
@@ -328,13 +328,13 @@
 
                 // 获取当前对象的data-index的值
                 let target_index = e.target.getAttribute('data-index');
-                    console.log(target_index);
-                if(target_index !='0'){
+                console.log(target_index);
+                if (target_index != '0') {
                     console.log(123);
                     $mark.stop().hide();
-                    $box2.stop().hide();                  
+                    $box2.stop().hide();
                 }
-             
+
             }
         </script>
 
