@@ -746,10 +746,10 @@ body {
 }
 .register .register_box .register_content .content_tel input {
   width: 280px;
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 10px;
 }
 .register .register_box .register_content .content_ver input {
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 10px;
   width: 130px;
 }
 .register .register_box .register_content .content_ver span {
@@ -775,7 +775,7 @@ body {
 }
 .register .register_box .register_content .content_pass input {
   width: 280px;
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 10px;
 }
 .register .register_box .register_content .content_check span {
   font-size: 12px;
