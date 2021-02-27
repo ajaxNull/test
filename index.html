@@ -12,6 +12,7 @@
     <script src="./js/index.js"></script>
 </head>
 <!-- 头部 -->
+
 <body id="index">
     <div class="head_nav">
         <div class="head_box">
@@ -274,8 +275,7 @@
                             <input type="text" placeholder="手机号 ">
                         </div>
                         <div class="pass">
-                            <input type="text" placeholder="短信验证码" class="short"><input type="text" class="get"
-                                style="cursor: pointer;" value="获取验证码" onclick="f1()">
+                            <input type="text" placeholder="短信验证码" class="short"><input type="text" class="get" style="cursor: pointer;" value="获取验证码" onclick="f1()">
                         </div>
                         <div class="subm" onclick="login_phone()">
                             登录
@@ -299,19 +299,18 @@
             </div>
             <div class="register_content">
                 <div class="content_tel">
-                    <input type="text" placeholder="手机号">
+                    <input type="text" placeholder="手机号" id="user_email" class="email_input">
                 </div>
                 <div class="content_ver">
-                    <input type="text" placeholder="验证码">
+                    <input type="text" placeholder="验证码" class="text_input">
                     <img src="" alt="" class="code">
                     <span onclick="change()" style="cursor: pointer;">换一张</span>
                 </div>
                 <div class="content_get">
-                    <input type="text" placeholder="短信验证码" class="short" style="padding-left: 40px;"><input type="text"
-                        placeholder="获取验证码" class="get" style="cursor: pointer;">
+                    <input type="text" placeholder="短信验证码" class="short" style="padding-left: 40px;"><input type="text" placeholder="获取验证码" onclick="f1()" class="get" style="cursor: pointer;">
                 </div>
                 <div class="content_pass">
-                    <input type="text" placeholder="密码（8-20个字符）">
+                    <input type="text" placeholder="密码（8-20个字符）" class="pass_input">
                 </div>
                 <div class="content_check">
                     <input type="checkbox">
@@ -319,7 +318,7 @@
                             href="https://i.360.cn/reg/privacy">《360用户隐私政策》</a> </span>
                 </div>
                 <div class="content_sub">
-                    <input type="submit" value="注册">
+                    <input type="submit" class="ster" value="注册" onclick="register()">
                 </div>
                 <div class="content_text">
                     <span>已有账号, <i onclick="href()" style="cursor: pointer;">直接登录</i></span>
@@ -363,7 +362,7 @@
         }
     });
 
-    let arr = ['更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐',];
+    let arr = ['更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐', '更多商品', '精品推荐', ];
     let list_str = '';
     arr.forEach((item, index) => {
         list_str += `<p onclick="list_click_open_page(${index})" onmouseover="list_over(${index})" onmouseout="list_seout(${index})" class="layui-anim list_ones">${item}</p>`

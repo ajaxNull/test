@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./less/info.css">
     <script src="./js/publicData.js"></script>
     <script src="./js/my_index.js"></script>
-
     <script src="https://lib.baomitu.com/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
@@ -19,12 +18,17 @@
             position: absolute;
             top: 180px;
             width: 550px;
-            height: 550px;
+            height: 450px;
             /* box-shadow: 4px 4px 10px 0 #616161; */
         }
         
         #box1 {
             left: 50px;
+        }
+        
+        #box1 #img_box {
+            width: 550px;
+            height: 450px;
         }
         
         #box2 {
@@ -46,7 +50,7 @@
             background-color: #000;
         }
         
-        #box1 img {
+        #box1 #img_box img {
             width: 100%;
             height: 100%;
         }
@@ -113,9 +117,8 @@
                     <div id="mark" data-index="0"></div>
                 </div>
 
-                <div class="list_box">
+                <div class="list_box"></div>
 
-                </div>
             </div>
             <div id="box2" class="info_img">
                 <img src="https://p2.ssl.qhimg.com/t010e9e338c925fdb48.webp" class="smallimg">
@@ -270,7 +273,9 @@
 
 
                     // 判断是否登录,如果没有登录跳转到登录页面
+
                     let arr = sessionStorage.getItem('name') ? JSON.parse(sessionStorage.getItem('name')) : [];
+                    console.log(arr);
                     arr.push(shopObj);
                     sessionStorage.setItem('name', JSON.stringify(arr));
                     window.location = './car.html';

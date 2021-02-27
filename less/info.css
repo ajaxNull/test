@@ -13,18 +13,19 @@
   text-align: center;
   height: 30vw;
 }
-.info_shop .info_img img {
+.info_shop .info_img #img_box img {
   width: 400px;
   height: 400px;
 }
 .info_shop .info_img .list_box {
-  width: 550px;
+  width: 19%;
   height: 100px;
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
 }
 .info_shop .info_img .list_box img {
-  width: 15%;
+  width: 100%;
   margin-right: 5px;
 }
 .info_shop .info_text {
@@ -190,7 +191,7 @@
   border: 1px solid #f33 !important;
 }
 h2 {
-  margin: 50px 0;
+  margin: 100px 0;
   text-align: center;
   font-size: 30px;
 }
